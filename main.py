@@ -24,12 +24,12 @@ while flag: # Aqui fazemos o loop que vai abrir e fechar o video
     for spot in spots:  # Loop pra colocarmos uma caixa azul em cada vaga do estacionamento usando a matriz de rotulos 
         x1, y1, w, h = spot
 
-        spot_cortado = frame[y1:y1 + h, x1:x1 + w, :]
-
-        if empty_or_not(spot_cortado):
-            frame = cv2.rectangle(frame, (x1,y1), (x1 + w , y1 + h), (0, 255, 0), 2)
+        spot_cortado = frame[y1:y1 + h, x1:x1 + w, :]  # Separamos a vaga do estacionamento
+        
+        if empty_or_not(spot_cortado): # e Verificamos se está vazia ou não 
+            frame = cv2.rectangle(frame, (x1,y1), (x1 + w , y1 + h), (0, 255, 0), 2) # Verde caso esteja
         else:
-            frame = cv2.rectangle(frame, (x1,y1), (x1 + w , y1 + h), (0, 0, 255), 2)
+            frame = cv2.rectangle(frame, (x1,y1), (x1 + w , y1 + h), (0, 0, 255), 2) # Vermelho caso contrario
     
 
     cv2.imshow('frame', frame)
