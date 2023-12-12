@@ -61,4 +61,4 @@ predict_y = melhor_estimador.predict(x_teste)
 
 score = accuracy_score(predict_y, y_teste)  # accuracy de aproximadamente 99.95%
 
-pickle.dump(melhor_estimador, open('./model.p', 'wb'))
+pickle.dump(melhor_estimador, open('./model.p', 'wb')) # Criamos um arquivo para poder utilizarmos todo esse classificador como modelo
